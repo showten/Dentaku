@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dentaku</string>
+
+    <string name="menu_item1">どうしても割りたいときはこちら</string>
 </resources>
