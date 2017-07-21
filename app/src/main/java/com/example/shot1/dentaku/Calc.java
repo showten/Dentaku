@@ -21,7 +21,7 @@ public class Calc {
 
         for(;;){
 
-            String A = str.substring(i);
+            String A = str.substring(i,i+1);
 
             if (A.equals("+")){
                 answer+=readInt(str,i+1);
@@ -53,11 +53,12 @@ public class Calc {
         int kari=0;
 
         for(;;) {
-            if (!(str.equals("+") || str.equals("-") || str.equals("*") || str.equals("="))) {
-                kari=kari*10+Integer.valueOf(str.substring(i));
+            if (!(str.substring(i,i+1).equals("+") || str.substring(i,i+1).equals("-") || str.substring(i,i+1).equals("*") || str.substring(i,i+1).equals("="))) {
+                kari=kari*10+Integer.valueOf(str.substring(i,i+1));
             }else{
                 break;
             }
+            i++;
         }
 
         return kari;
