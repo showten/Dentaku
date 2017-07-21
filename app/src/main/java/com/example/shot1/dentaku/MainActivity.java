@@ -161,11 +161,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ShikiOperator = "=";
                 shikiCheck();
-                Log.d("Shiki",Shiki);
-                //計算する
-                Calc ca = new Calc();
-                int a = ca.Interpretation(Shiki);
-                textView.setText(String.valueOf(a));
+                if (Shiki.length()>0) {
+                    //Log.d("Shiki",Shiki);
+                    //計算する
+                    Calc ca = new Calc();
+                    int a = ca.Interpretation(Shiki);
+                    textView.setText(String.valueOf(a));
+                    Shiki = String.valueOf(a);
+                }
             }
         });
 
