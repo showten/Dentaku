@@ -8,12 +8,16 @@ import android.util.Log;
 
 public class Calc {
 
+    int flag=0;
+
     public int Interpretation(String str){
 
         int answer = 0;
         int kari = 0;
         int len = str.length();
         int i=0;
+
+        flag=0;
 
         answer=readInt(str,i);
 
@@ -35,6 +39,14 @@ public class Calc {
                 answer*=readInt(str,i+1);
             }
 
+            if (A.equals("/")){
+
+                if(answer%readInt(str,i+1)!=0){
+                    flag=1;
+                }
+                answer=answer/readInt(str,i+1);
+            }
+
             if (A.equals("=")){
                 break;
             }
@@ -48,12 +60,16 @@ public class Calc {
 
     }
 
+    public int checkWaru(){
+        return flag;
+    }
+
     public int readInt(String str,int i){
 
         int kari=0;
 
         for(;;) {
-            if (!(str.substring(i,i+1).equals("+") || str.substring(i,i+1).equals("-") || str.substring(i,i+1).equals("*") || str.substring(i,i+1).equals("="))) {
+            if (!(str.substring(i,i+1).equals("+") ||str.substring(i,i+1).equals("/") || str.substring(i,i+1).equals("-") || str.substring(i,i+1).equals("*") || str.substring(i,i+1).equals("="))) {
                 kari=kari*10+Integer.valueOf(str.substring(i,i+1));
             }else{
                 break;
