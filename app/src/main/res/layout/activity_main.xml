@@ -15,10 +15,11 @@
             android:id="@+id/text_view"
             android:textSize="50sp"
             android:textColor="#ff00ff"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello" />
+            android:layout_height="match_parent"
+            android:text="\nHello"
+            />
 
     </LinearLayout>
     <!--横に配置するための入れ物(LinearLayout orientation:horizontal）!-->
@@ -34,6 +35,7 @@
             android:layout_height="match_parent"
             android:text="7"
             android:id="@+id/button7"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -41,6 +43,7 @@
             android:layout_height="match_parent"
             android:text="8"
             android:id="@+id/button8"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -48,6 +51,7 @@
             android:layout_height="match_parent"
             android:text="9"
             android:id="@+id/button9"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -55,6 +59,7 @@
             android:layout_height="match_parent"
             android:text="0"
             android:id="@+id/button0"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -62,6 +67,7 @@
             android:layout_height="match_parent"
             android:text="AC"
             android:id="@+id/buttonAc"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -78,6 +84,7 @@
             android:layout_height="match_parent"
             android:text="4"
             android:id="@+id/button4"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -85,6 +92,7 @@
             android:layout_height="match_parent"
             android:text="5"
             android:id="@+id/button5"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -92,6 +100,7 @@
             android:layout_height="match_parent"
             android:text="6"
             android:id="@+id/button6"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -99,6 +108,7 @@
             android:layout_height="match_parent"
             android:text="×"
             android:id="@+id/buttonKakeru"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -106,6 +116,7 @@
             android:layout_height="match_parent"
             android:text="="
             android:id="@+id/buttonEqual"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -122,6 +133,7 @@
             android:layout_height="match_parent"
             android:text="1"
             android:id="@+id/button1"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -129,6 +141,7 @@
             android:layout_height="match_parent"
             android:text="2"
             android:id="@+id/button2"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -136,6 +149,7 @@
             android:layout_height="match_parent"
             android:text="3"
             android:id="@+id/button3"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -143,6 +157,7 @@
             android:layout_height="match_parent"
             android:text="+"
             android:id="@+id/buttonPlus"
+            android:textSize="50sp"
             android:layout_weight="1" />
 
         <Button
@@ -150,6 +165,7 @@
             android:layout_height="match_parent"
             android:text="-"
             android:id="@+id/buttonMinus"
+            android:textSize="70sp"
             android:layout_weight="1" />
 
     </LinearLayout>
