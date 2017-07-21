@@ -67,7 +67,7 @@
             android:layout_height="match_parent"
             android:text="AC"
             android:id="@+id/buttonAc"
-            android:textSize="50sp"
+            android:textSize="40sp"
             android:layout_weight="1" />
 
     </LinearLayout>
