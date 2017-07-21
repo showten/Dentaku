@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
     private String Shiki="";
+    private String ShikiOperator="";
 
 
     @Override
@@ -59,78 +61,91 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Shiki += "0";
+                textView.setText(Shiki);
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "1";
+                textView.setText(Shiki);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "2";
+                textView.setText(Shiki);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "3";
+                textView.setText(Shiki);
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "4";
+                textView.setText(Shiki);
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "5";
+                textView.setText(Shiki);
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "6";
+                textView.setText(Shiki);
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "7";
+                textView.setText(Shiki);
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "8";
+                textView.setText(Shiki);
             }
         });
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Shiki += "9";
+                textView.setText(Shiki);
             }
         });
         buttonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Shiki += "+";
+                ShikiOperator= "+";
+                shikiCheck();
             }
         });
         buttonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Shiki += "-";
+                ShikiOperator= "-";
+                shikiCheck();
             }
         });
         buttonKakeru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Shiki += "*";
+                ShikiOperator= "*";
+                shikiCheck();
             }
         });
         //buttonWaru.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ShikiOperator = "=";
+                shikiCheck();
                 //計算する
             }
         });
@@ -151,11 +168,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Shiki="";
+                textView.setText(Shiki);
             }
         });
 
 
     }
 
+    private void shikiCheck(){
+        if (Shiki.length()>0){
+            char c = Shiki.charAt(Shiki.length()-1);
+            if(c == '+' | c == '-' | c=='*' | c== '=')
+                Toast.makeText(this, "演算子は重複できません", Toast.LENGTH_SHORT).show();
+            else
+                Shiki+=ShikiOperator;
+            textView.setText(Shiki);
+            }
+        }
 
-}
+
+    }
+
