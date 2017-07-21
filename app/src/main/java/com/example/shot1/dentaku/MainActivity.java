@@ -2,6 +2,7 @@ package com.example.shot1.dentaku;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
@@ -160,7 +161,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ShikiOperator = "=";
                 shikiCheck();
+                Log.d("Shiki",Shiki);
                 //計算する
+                Calc ca = new Calc();
+                int a = ca.Interpretation(Shiki);
+                textView.setText(String.valueOf(a));
             }
         });
 
@@ -182,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "演算子は重複できません", Toast.LENGTH_SHORT).show();
             else
                 Shiki+=ShikiOperator;
+
             textView.setText(Shiki);
             }
         }
