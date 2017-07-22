@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private String Shiki="";
     private String ShikiOperator="";
+    private boolean ShikiError = false;
 
 
     @Override
@@ -136,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ShikiOperator= "+";
                 shikiCheck();
+                ShikiError=false;
             }
         });
         buttonMinus.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ShikiOperator= "-";
                 shikiCheck();
+                ShikiError=false;
             }
         });
         buttonKakeru.setOnClickListener(new View.OnClickListener() {
@@ -150,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ShikiOperator= "*";
                 shikiCheck();
+                ShikiError=false;
             }
         });
         //buttonWaru.setOnClickListener(new View.OnClickListener() {
@@ -164,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ShikiOperator = "=";
                 shikiCheck();
-                if (Shiki.length()>0) {
+                if (Shiki.length()>0 && ShikiError==false) {
                     //Log.d("Shiki",Shiki);
                     //計算する
                     Calc ca = new Calc();
@@ -176,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                         textView.setText(String.valueOf(a));
                     Shiki = String.valueOf(a);
                 }
+                ShikiError=false;
             }
         });
 
@@ -204,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.item1:
                 ShikiOperator= "/";
                 shikiCheck();
+                ShikiError=false;
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -214,8 +220,10 @@ public class MainActivity extends AppCompatActivity {
     private void shikiCheck(){
         if (Shiki.length()>0){
             char c = Shiki.charAt(Shiki.length()-1);
-            if(c == '+' | c == '-' | c=='*' | c== '=')
+            if(c == '+' | c == '-' | c=='*' | c== '='){
                 Toast.makeText(this, "演算子は重複できません", Toast.LENGTH_SHORT).show();
+                ShikiError=true;
+            }
             else
                 Shiki+=ShikiOperator;
 
